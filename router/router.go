@@ -1,10 +1,11 @@
 package router
 
 import (
-	"Gf-Vben/app/api/curd"
-	"Gf-Vben/app/api/router"
-	"Gf-Vben/app/api/user"
-	"Gf-Vben/app/service/middleware"
+	"EftServer/app/api/curd"
+	"EftServer/app/api/dogtag"
+	"EftServer/app/api/router"
+	"EftServer/app/api/user"
+	"EftServer/app/service/middleware"
 	"github.com/gogf/gf/frame/g"
 	"github.com/gogf/gf/net/ghttp"
 )
@@ -20,6 +21,8 @@ func init() {
 	s.BindMiddleware("/*", middleware.CORS)
 	s.BindHandler("POST:/login", middleware.GfJWTMiddleware.LoginHandler)
 	s.BindHandler("POST:/register", user.Register)
+	s.BindHandler("POST:/images", dogtag.Image)
+
 	// 分组路由注册方式
 	s.Group("/api", func(group *ghttp.RouterGroup) {
 		group.Middleware(middleware.Auth)

@@ -8,20 +8,20 @@ import (
 	"EftServer/app/dao/internal"
 )
 
-// casbinRuleDao is the manager for logic model data accessing and custom defined data operations functions management.
+// weaponDao is the manager for logic model data accessing and custom defined data operations functions management.
 // You can define custom methods on it to extend its functionality as you wish.
-type casbinRuleDao struct {
-	*internal.CasbinRuleDao
+type weaponDao struct {
+	*internal.WeaponDao
 }
 
 var (
-	// CasbinRule is globally public accessible object for table casbin_rule operations.
-	CasbinRule casbinRuleDao
+	// Weapon is globally public accessible object for table weapon operations.
+	Weapon weaponDao
 )
 
 func init() {
-	CasbinRule = casbinRuleDao{
-		internal.NewCasbinRuleDao(),
+	Weapon = weaponDao{
+		internal.NewWeaponDao(),
 	}
 }
 

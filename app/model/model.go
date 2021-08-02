@@ -19,21 +19,19 @@ type CasbinRule struct {
 	V5    string `orm:"v5"    json:"v5"`    //
 }
 
-// Router is the golang structure for table router.
-type Router struct {
-	Id        int         `orm:"id,primary" json:"id"`        //
-	Path      string      `orm:"path"       json:"path"`      //
-	Name      string      `orm:"name"       json:"name"`      //
-	Redirect  string      `orm:"redirect"   json:"redirect"`  //
-	Title     string      `orm:"title"      json:"title"`     //
-	Icon      string      `orm:"icon"       json:"icon"`      //
-	Component string      `orm:"component"  json:"component"` //
-	Parent    int         `orm:"parent"     json:"parent"`    //
-	OrderNo   int         `orm:"orderNo"    json:"orderNo"`   //
-	Status    int         `orm:"status"     json:"status"`    //
-	CreateAt  *gtime.Time `orm:"create_at"  json:"createAt"`  //
-	UpdateAt  *gtime.Time `orm:"update_at"  json:"updateAt"`  //
-	DeleteAt  *gtime.Time `orm:"delete_at"  json:"deleteAt"`  //
+// Dogtag is the golang structure for table dogtag.
+type Dogtag struct {
+	Id         int         `orm:"id,primary"  json:"id"`         //
+	PlayerName string      `orm:"player_name" json:"playerName"` //
+	KillerName string      `orm:"killer_name" json:"killerName"` //
+	Map        string      `orm:"map"         json:"map"`        //
+	Weapon     string      `orm:"weapon"      json:"weapon"`     //
+	Camp       string      `orm:"camp"        json:"camp"`       //
+	Level      int         `orm:"level"       json:"level"`      //
+	KillAt     *gtime.Time `orm:"kill_at"     json:"killAt"`     //
+	CreateAt   *gtime.Time `orm:"create_at"   json:"createAt"`   //
+	UpdateAt   *gtime.Time `orm:"update_at"   json:"updateAt"`   //
+	DeleteAt   *gtime.Time `orm:"delete_at"   json:"deleteAt"`   //
 }
 
 // User is the golang structure for table user.
@@ -41,9 +39,22 @@ type User struct {
 	Id       int         `orm:"id,primary"       json:"id"`       // primary id
 	Username string      `orm:"username,primary" json:"username"` // username
 	Password string      `orm:"password"         json:"password"` // password
+	Note     string      `orm:"note"             json:"note"`     //
 	NickName string      `orm:"nick_name"        json:"nickName"` // nickName
 	Status   int         `orm:"status"           json:"status"`   // 1:enable 2:disable
 	CreateAt *gtime.Time `orm:"create_at"        json:"createAt"` //
 	UpdateAt *gtime.Time `orm:"update_at"        json:"updateAt"` //
 	DeleteAt *gtime.Time `orm:"delete_at"        json:"deleteAt"` //
+}
+
+// Weapon is the golang structure for table weapon.
+type Weapon struct {
+	Id       int         `orm:"id,primary" json:"id"`       //
+	FullName string      `orm:"full_name"  json:"fullName"` //
+	Name     string      `orm:"name"       json:"name"`     //
+	Type     int         `orm:"type"       json:"type"`     // 武器类型 1、手枪 2、冲锋枪 3、投掷物 4、机枪 5、栓动式步枪 6、突击卡宾枪 7、突击步枪 8、精确射手步枪 9、近战武器 10、散弹枪
+	Caliber  string      `orm:"caliber"    json:"caliber"`  // 子弹类型
+	CreateAt *gtime.Time `orm:"create_at"  json:"createAt"` //
+	UpdateAt *gtime.Time `orm:"update_at"  json:"updateAt"` //
+	DeleteAt *gtime.Time `orm:"delete_at"  json:"deleteAt"` //
 }

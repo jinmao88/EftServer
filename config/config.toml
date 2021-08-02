@@ -1,7 +1,7 @@
 
 [server]
 	Address        = ":10086"
-	ServerAgent    = "Gf-Vben"
+	ServerAgent    = "EftAdmin"
 	LogPath        = "./log/server"
 	NameToUriType  = 2
 	RouteOverWrite = true
@@ -17,7 +17,7 @@
 
 # 数据库连接
 [database]
-    link  = "mysql:gf-vben:3dGkKJyDP4KaZews@tcp(47.116.71.73:3306)/gf-vben"
+    link  = "mysql:eft:MBsRWTNaRmR7D24j@tcp(47.116.71.73:3306)/eft"
     debug = true
     # 数据库日志对象配置
     [database.logger]
@@ -39,4 +39,4 @@
         path     = "./bin"
         extra    = "-ldflags \"-s -w\""
     [[gfcli.gen.dao]]
-    link     = "mysql:gf-vben:3dGkKJyDP4KaZews@tcp(47.116.71.73:3306)/gf-vben"
+    link     = "mysql:eft:MBsRWTNaRmR7D24j@tcp(47.116.71.73:3306)/eft"

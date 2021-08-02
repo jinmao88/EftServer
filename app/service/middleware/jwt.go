@@ -1,8 +1,8 @@
 package middleware
 
 import (
-	"Gf-Vben/app/dao"
-	"Gf-Vben/app/model"
+	"EftServer/app/dao"
+	"EftServer/app/model"
 	jwt "github.com/gogf/gf-jwt"
 	"github.com/gogf/gf/crypto/gmd5"
 	"github.com/gogf/gf/errors/gerror"

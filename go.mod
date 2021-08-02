@@ -1,4 +1,4 @@
-module Gf-Vben
+module EftServer
 
 go 1.16
 

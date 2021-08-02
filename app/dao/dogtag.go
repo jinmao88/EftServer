@@ -5,23 +5,23 @@
 package dao
 
 import (
-	"Gf-Vben/app/dao/internal"
+	"EftServer/app/dao/internal"
 )
 
-// routerDao is the manager for logic model data accessing and custom defined data operations functions management.
+// dogtagDao is the manager for logic model data accessing and custom defined data operations functions management.
 // You can define custom methods on it to extend its functionality as you wish.
-type routerDao struct {
-	*internal.RouterDao
+type dogtagDao struct {
+	*internal.DogtagDao
 }
 
 var (
-	// Router is globally public accessible object for table router operations.
-	Router routerDao
+	// Dogtag is globally public accessible object for table dogtag operations.
+	Dogtag dogtagDao
 )
 
 func init() {
-	Router = routerDao{
-		internal.NewRouterDao(),
+	Dogtag = dogtagDao{
+		internal.NewDogtagDao(),
 	}
 }
 

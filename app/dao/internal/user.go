@@ -23,6 +23,7 @@ type userColumns struct {
 	Id       string // primary id
 	Username string // username
 	Password string // password
+	Note     string //
 	NickName string // nickName
 	Status   string // 1:enable 2:disable
 	CreateAt string //
@@ -36,6 +37,7 @@ func NewUserDao() *UserDao {
 		Id:       "id",
 		Username: "username",
 		Password: "password",
+		Note:     "note",
 		NickName: "nick_name",
 		Status:   "status",
 		CreateAt: "create_at",

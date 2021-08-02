@@ -1,8 +1,8 @@
 package user
 
 import (
-	"Gf-Vben/app/dao"
-	"Gf-Vben/app/model"
+	"EftServer/app/dao"
+	"EftServer/app/model"
 	"github.com/gogf/gf/crypto/gmd5"
 	"github.com/gogf/gf/errors/gerror"
 )

@@ -5,7 +5,7 @@
 package dao
 
 import (
-	"Gf-Vben/app/dao/internal"
+	"EftServer/app/dao/internal"
 )
 
 // userDao is the manager for logic model data accessing and custom defined data operations functions management.

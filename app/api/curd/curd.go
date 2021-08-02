@@ -1,9 +1,11 @@
 package curd
 
 import (
-	"Gf-Vben/app/service/curd"
-	"Gf-Vben/app/service/response"
-	"Gf-Vben/app/service/user"
+	"EftServer/app/service/curd"
+	"EftServer/app/service/dogtag"
+	"EftServer/app/service/response"
+	"EftServer/app/service/user"
+	"EftServer/app/service/weapon"
 	"github.com/gogf/gf/net/ghttp"
 )
 
@@ -20,6 +22,12 @@ func (c *Controller) Curd(r *ghttp.Request) {
 	switch c.Interface {
 	case "user":
 		req := new(user.Req)
+		cu = req
+	case "dogtag":
+		req := new(dogtag.Req)
+		cu = req
+	case "weapon":
+		req := new(weapon.Req)
 		cu = req
 	default:
 		response.JsonExit(r, 2, "接口参数错误")

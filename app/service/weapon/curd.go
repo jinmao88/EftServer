@@ -1,8 +1,7 @@
-package user
+package weapon
 
 import (
 	"EftServer/app/dao"
-	"github.com/gogf/gf/errors/gerror"
 	"github.com/gogf/gf/frame/g"
 )
 
@@ -12,32 +11,36 @@ type Req struct {
 	Query
 }
 type Query struct {
-	Id       int `p:"id"`
-	Username int `p:"username"`
-	Uuid     int `p:"uuid"`
+	Id   int `p:"id"`
+	Type int `p:"type"`
 }
 
 func (r Req) List() (g.Map, error) {
-
-	u, err := dao.User.All()
+	m := g.DB().Model("weapon")
+	if r.Type != 0 {
+		m = m.Where("type", r.Type)
+	}
+	count, err := m.Count()
 	if err != nil {
 		return nil, err
 	}
-
-	if u == nil {
-		return nil, gerror.New("用户不存在")
+	all, err := m.Page(r.Page, r.PageSize).All()
+	if err != nil {
+		return nil, err
 	}
 	return g.Map{
-		"items":    u,
-		"total":    1,
+		"items":    all,
+		"total":    count,
 		"page":     r.Page,
 		"pageSize": r.PageSize,
 	}, nil
-	//return g.Map{"list":[]g.Map{g.Map{}}}
 }
 
 func (r Req) Add() error {
-	panic("implement me")
+	if _, err := dao.Dogtag.Data(r).Save(); err != nil {
+		return err
+	}
+	return nil
 }
 
 func (r Req) Edit() error {

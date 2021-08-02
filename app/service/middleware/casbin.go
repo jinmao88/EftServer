@@ -1,7 +1,7 @@
 package middleware
 
 import (
-	"Gf-Vben/app/service/response"
+	"EftServer/app/service/response"
 	"github.com/casbin/casbin/v2"
 	"github.com/gogf/gf/net/ghttp"
 	"github.com/gogf/gf/os/glog"

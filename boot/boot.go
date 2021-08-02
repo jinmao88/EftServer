@@ -1,7 +1,7 @@
 package boot
 
 import (
-	"Gf-Vben/app/service/middleware"
+	"EftServer/app/service/middleware"
 	"github.com/casbin/casbin/v2"
 	"github.com/casbin/casbin/v2/model"
 	"github.com/gogf/gf/frame/g"

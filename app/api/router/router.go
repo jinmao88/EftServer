@@ -1,8 +1,8 @@
 package router
 
 import (
-	"Gf-Vben/app/service/response"
-	"Gf-Vben/app/service/router"
+	"EftServer/app/service/response"
+	"EftServer/app/service/router"
 	"github.com/gogf/gf/net/ghttp"
 )
 
